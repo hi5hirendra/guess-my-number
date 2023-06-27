@@ -1,0 +1,67 @@
+* {
+    font-family: "Press Start 2P", cursive;
+}
+
+body {
+    color: white;
+    background-color: #222;
+}
+
+button {
+    padding: 0.5rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+#between {
+    text-align: center;
+}
+
+.secret-container {
+    display: flex;
+    text-align: center;
+}
+
+#secret-number {
+    display: inline-block;
+    border: 3px solid white;
+    padding: 2rem;
+    font-size: xx-large;
+}
+
+.secret-container::before,
+.secret-container::after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 3px solid white;
+    margin: auto;
+}
+
+.display-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-area {
+    text-align: center;
+}
+
+input {
+    padding: 1.5rem;
+    color: white;
+    background-color: #222;
+    font-size: xx-large;
+    text-align: center;
+    border: 3px solid white;
+    outline: none;
+}
+
+.input-area button {
+    margin-top: 1rem;
+}
+
+.message-area {
+    text-align: center;
+}
