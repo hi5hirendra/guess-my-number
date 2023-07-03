@@ -25,7 +25,7 @@ document.querySelector("#checkNumber").addEventListener("click", function () {
             );
             // console.log(secretNumber, guessedNumber);
         }
-    } else message("No Number!");
+    } else message("No Number!", score, highScore);
 });
 
 document.querySelector("#reset").addEventListener("click", function () {
