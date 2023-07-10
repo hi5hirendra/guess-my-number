@@ -5,27 +5,33 @@ let highScore = 0;
 let message = function (outputMsg, score, highScore) {
     document.querySelector("#msg").textContent = outputMsg;
     document.querySelector("#score").textContent = `Score: ${score}`;
-    document.querySelector("#high-score").textContent = `High Score: ${highScore}`;
+    document.querySelector(
+        "#high-score"
+    ).textContent = `High Score: ${highScore}`;
 };
+
 document.querySelector("#checkNumber").addEventListener("click", function () {
     let guessedNumber = Number(document.querySelector("#guessedNumber").value);
-    if (guessedNumber) {
-        if (guessedNumber === secretNumber) {
-            document.querySelector("#secret-number").textContent = secretNumber;
-            highScore = score > highScore ? score : highScore;
-            message("You Win!", score, highScore);
-            document.body.style.backgroundColor = "green";
-            document.querySelector("input").style.backgroundColor = "green";
-        } else {
-            score--;
-            message(
-                guessedNumber > secretNumber ? "Too High!" : "Too Low!",
-                score,
-                highScore
-            );
-            // console.log(secretNumber, guessedNumber);
+    if (score > 0) {
+        if (guessedNumber) {
+            if (guessedNumber === secretNumber) {
+                document.querySelector("#secret-number").textContent = secretNumber;
+                highScore = score > highScore ? score : highScore;
+                message("You Win!", score, highScore);
+                document.body.style.backgroundColor = "green";
+                document.querySelector("input").style.backgroundColor = "green";
+            } else {
+                score--;
+                message(
+                    guessedNumber > secretNumber ? "Too High!" : "Too Low!",
+                    score,
+                    highScore
+                );
+            }
         }
-    } else message("No Number!", score, highScore);
+        else { message("No Number!", score, highScore); }
+    }
+    else { message("You Lost!", score, highScore); }
 });
 
 document.querySelector("#reset").addEventListener("click", function () {
